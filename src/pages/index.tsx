@@ -14,6 +14,17 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const [error, setError] = useState("");
 
+  const router = useRouter();
+
+  useEffect(() => {
+    router.events.on("beforeHistoryChange", () => {
+      setLoading(true);
+    });
+    router.events.on("routeChangeComplete", () => {
+      setLoading(false);
+    });
+  }, [router.events]);
+
   const fetchWeatherData = useCallback(
     async (q?: string) => {
       setLoading(true);
