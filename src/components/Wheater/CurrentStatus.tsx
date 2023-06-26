@@ -108,7 +108,7 @@ const CurrentStatus = ({
               mb: 2,
             }}
           >
-            {location.name} - {location.country}
+            {location.name} - {location.region} - {location.country}
           </Typography>
           <Box display="flex" alignItems="center">
             <Image
