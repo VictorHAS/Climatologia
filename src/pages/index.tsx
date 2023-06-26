@@ -164,7 +164,7 @@ export default function Home() {
   const fetchCities = async (inputValue: string) => {
     try {
       const response = await fetch(
-        `http://api.weatherapi.com/v1/search.json?key=0b9777b11df14ee099732107232106&q=${inputValue}`
+        `https://api.weatherapi.com/v1/search.json?key=0b9777b11df14ee099732107232106&q=${inputValue}`
       ).then((res) => res.json());
 
       if (response.error) throw response;
